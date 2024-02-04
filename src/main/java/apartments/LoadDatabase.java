@@ -23,21 +23,51 @@ public class LoadDatabase {
             // listings
             log.info("Preloading " + repository2.save(new Listing(
                 "FoxRidge",
-                "123 Unviersity Boulevard",
+                "750 Hethwood Boulevard",
                 1,
                 900
             )));
             log.info("Preloading " + repository2.save(new Listing(
                 "Shawnee",
-                "123 Unviersity Boulevard",
+                "1222 Unviersity City Boulevard",
                 1,
-                900
+                1000
             )));
             log.info("Preloading " + repository2.save(new Listing(
-                "Chasewood",
-                "123 Unviersity Boulevard",
+                "Chasewood Downs",
+                "1301 Unviersity City Boulevard",
                 1,
-                900
+                700
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Hunter's Ridge",
+                "1310 Henry Lane",
+                1,
+                850
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Union",
+                "1001 University City Boulevard",
+                1,
+                1100
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Widsor Hills",
+                "200 Hampton Court",
+                1,
+                950
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Cedar Pointe",
+                "200 Cedar Pointe Drive",
+                1,
+                850
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Hub",
+                "1201 Snyder Lane",
+                1,
+                1000
             )));
         };
     }

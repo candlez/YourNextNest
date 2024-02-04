@@ -25,8 +25,33 @@ public class LoadDatabase {
                 "FoxRidge",
                 "750 Hethwood Boulevard",
                 1,
-                900
+                1200
             )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "FoxRidge",
+                "750 Hethwood Boulevard",
+                2,
+                1400
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "FoxRidge",
+                "750 Hethwood Boulevard",
+                3,
+                1600
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "FoxRidge",
+                "750 Hethwood Boulevard",
+                4,
+                2600
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "FoxRidge",
+                "750 Hethwood Boulevard",
+                5,
+                3200
+            )));
+
             log.info("Preloading " + repository2.save(new Listing(
                 "Shawnee",
                 "1222 Unviersity City Boulevard",
@@ -34,39 +59,122 @@ public class LoadDatabase {
                 1000
             )));
             log.info("Preloading " + repository2.save(new Listing(
+                "Shawnee",
+                "1222 Unviersity City Boulevard",
+                2,
+                2400
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Shawnee",
+                "1222 Unviersity City Boulevard",
+                3,
+                4350
+            )));
+
+            log.info("Preloading " + repository2.save(new Listing(
                 "Chasewood Downs",
                 "1301 Unviersity City Boulevard",
                 1,
-                700
+                800
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Chasewood Downs",
+                "1301 Unviersity City Boulevard",
+                2,
+                1800
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Chasewood Downs",
+                "1301 Unviersity City Boulevard",
+                3,
+                1500
+            )));
+
+            log.info("Preloading " + repository2.save(new Listing(
+                "Hunter's Ridge",
+                "1310 Henry Lane",
+                2,
+                1700
             )));
             log.info("Preloading " + repository2.save(new Listing(
                 "Hunter's Ridge",
                 "1310 Henry Lane",
-                1,
-                850
+                4,
+                3300
             )));
+
             log.info("Preloading " + repository2.save(new Listing(
                 "The Union",
                 "1001 University City Boulevard",
                 1,
-                1100
+                1500
             )));
             log.info("Preloading " + repository2.save(new Listing(
-                "Widsor Hills",
+                "The Union",
+                "1001 University City Boulevard",
+                2,
+                2500
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Union",
+                "1001 University City Boulevard",
+                3,
+                3600
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Union",
+                "1001 University City Boulevard",
+                4,
+                4400
+            )));
+
+            log.info("Preloading " + repository2.save(new Listing(
+                "Windsor Hills",
                 "200 Hampton Court",
                 1,
-                950
+                1150
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Windsor Hills",
+                "200 Hampton Court",
+                2,
+                2500
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Windsor Hills",
+                "200 Hampton Court",
+                3,
+                4900
             )));
             log.info("Preloading " + repository2.save(new Listing(
                 "Cedar Pointe",
                 "200 Cedar Pointe Drive",
                 1,
-                850
+                1300
             )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "Cedar Pointe",
+                "200 Cedar Pointe Drive",
+                2,
+                3500
+            )));
+
             log.info("Preloading " + repository2.save(new Listing(
                 "The Hub",
                 "1201 Snyder Lane",
                 1,
+                1700
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Hub",
+                "1201 Snyder Lane",
+                2,
+                2500
+            )));
+            log.info("Preloading " + repository2.save(new Listing(
+                "The Hub",
+                "1201 Snyder Lane",
+                4,
                 1000
             )));
         };

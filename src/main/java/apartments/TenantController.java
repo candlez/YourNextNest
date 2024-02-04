@@ -24,16 +24,16 @@ public class TenantController {
     private final TenantRepository repository;
     private final TenantModelAssembler assembler;
 
-    TenantController(TenantRepository repo, TenantModelAssembler assembler) {
+    public TenantController(TenantRepository repo, TenantModelAssembler assembler) {
         this.repository = repo;
         this.assembler = assembler;
     }
 
     @CrossOrigin
     @GetMapping("/tenants")
-    CollectionModel<EntityModel<Tenant>> all() {
-        List<EntityModel<Tenant>> tenants = repository.findAll().stream()
-            .map(assembler::toModel)
+    public CollectionModel<EntityModel<Tenant>> all() {
+        List<EntityModel<Tenant>> tenants = this.repository.findAll().stream()
+            .map(this.assembler::toModel)
             .collect(Collectors.toList());
         
         return CollectionModel.of(tenants, linkTo(methodOn(TenantController.class).all()).withSelfRel());
@@ -41,16 +41,15 @@ public class TenantController {
 
     @CrossOrigin
     @PostMapping("/tenants")
-    EntityModel<Tenant> newTenant(@RequestBody Tenant newTenant) {
+    public EntityModel<Tenant> newTenant(@RequestBody Tenant newTenant) {
         Tenant tenant = repository.save(newTenant);
-
         return this.assembler.toModel(tenant);
     }
 
     @CrossOrigin
     @GetMapping("/tenants/{id}")
-    EntityModel<Tenant> one(@PathVariable Long id) {
-        Tenant tenant = repository.findById(id)
+    public EntityModel<Tenant> one(@PathVariable Long id) {
+        Tenant tenant = this.repository.findById(id)
             .orElseThrow(() -> new TenantNotFoundException(id));
         
         return this.assembler.toModel(tenant);
@@ -58,8 +57,8 @@ public class TenantController {
 
     @CrossOrigin
     @PutMapping("/tenants/{id}")
-    EntityModel<Tenant> replaceTenant(@RequestBody Tenant newTenant, @PathVariable Long id) {
-        return repository.findById(id).map(tenant -> {
+    public EntityModel<Tenant> replaceTenant(@RequestBody Tenant newTenant, @PathVariable Long id) {
+        return this.repository.findById(id).map(tenant -> {
             tenant.setName(newTenant.getName());
             return this.assembler.toModel(repository.save(tenant));
         }).orElseGet(() -> {
@@ -71,7 +70,7 @@ public class TenantController {
 
     @CrossOrigin
     @DeleteMapping("/tenants/{id}")
-    void deleteTenant(@PathVariable Long id) {
-        repository.deleteById(id);
+    public void deleteTenant(@PathVariable Long id) {
+        this.repository.deleteById(id);
     }
 }

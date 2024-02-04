@@ -7,6 +7,7 @@ import java.util.List;
 
 import java.util.stream.Collectors;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class TenantController {
         this.assembler = assembler;
     }
 
+    @CrossOrigin
     @GetMapping("/tenants")
     CollectionModel<EntityModel<Tenant>> all() {
         List<EntityModel<Tenant>> tenants = repository.findAll().stream()
@@ -37,6 +39,7 @@ public class TenantController {
         return CollectionModel.of(tenants, linkTo(methodOn(TenantController.class).all()).withSelfRel());
     }
 
+    @CrossOrigin
     @PostMapping("/tenants")
     EntityModel<Tenant> newTenant(@RequestBody Tenant newTenant) {
         Tenant tenant = repository.save(newTenant);
@@ -44,6 +47,7 @@ public class TenantController {
         return this.assembler.toModel(tenant);
     }
 
+    @CrossOrigin
     @GetMapping("/tenants/{id}")
     EntityModel<Tenant> one(@PathVariable Long id) {
         Tenant tenant = repository.findById(id)
@@ -52,6 +56,7 @@ public class TenantController {
         return this.assembler.toModel(tenant);
     }
 
+    @CrossOrigin
     @PutMapping("/tenants/{id}")
     EntityModel<Tenant> replaceTenant(@RequestBody Tenant newTenant, @PathVariable Long id) {
         return repository.findById(id).map(tenant -> {
@@ -64,6 +69,7 @@ public class TenantController {
         
     }
 
+    @CrossOrigin
     @DeleteMapping("/tenants/{id}")
     void deleteTenant(@PathVariable Long id) {
         repository.deleteById(id);
